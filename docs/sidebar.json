@@ -1,10 +1,6 @@
 {
-  "Notebook": {
-    "Export to modules": "/export",
-    "Convert to html": "/export2html",
-    "Show doc": "/showdoc",
-    "Test functions": "/test",
-    "Core functions": "/core",
-    "Command line functions": "/cli"
+  "crawler_from_scratch": {
+    "Overview": "/",
+    "\u6700\u7b80\u5355\u7684\u722c\u866b": "/Getting_Started"
   }
 }
