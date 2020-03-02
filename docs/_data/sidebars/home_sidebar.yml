@@ -12,6 +12,12 @@ entries:
     - output: web,pdf
       title: "\u6700\u7B80\u5355\u7684\u722C\u866B"
       url: /Getting_Started
+    - output: web,pdf
+      title: "\u8FDB\u9636\u7684\u722C\u866B"
+      url: /Advanced_Request
+    - output: web,pdf
+      title: Title
+      url: /auto_crawler
     output: web
     title: crawler_from_scratch
   output: web

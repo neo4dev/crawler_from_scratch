@@ -2,9 +2,19 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {}
+index = {"find_candidate_content_list": "01_Advanced_Request.ipynb",
+         "find_content_list": "01_Advanced_Request.ipynb",
+         "get_content_list": "01_Advanced_Request.ipynb",
+         "is_next_page": "01_Advanced_Request.ipynb",
+         "get_next_page_url": "01_Advanced_Request.ipynb",
+         "get_childrens": "01_Advanced_Request.ipynb",
+         "get_prefix": "01_Advanced_Request.ipynb",
+         "get_item_data": "01_Advanced_Request.ipynb",
+         "find_item_id": "01_Advanced_Request.ipynb"}
 
-modules = []
+modules = ["start.py",
+           "utils.py",
+           "auto.py"]
 
 doc_url = "https://neo4dev.github.io/crawler_from_scratch/"
 

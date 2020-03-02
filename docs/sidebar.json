@@ -1,6 +1,8 @@
 {
   "crawler_from_scratch": {
     "Overview": "/",
-    "\u6700\u7b80\u5355\u7684\u722c\u866b": "/Getting_Started"
+    "\u6700\u7b80\u5355\u7684\u722c\u866b": "/Getting_Started",
+    "\u8fdb\u9636\u7684\u722c\u866b": "/Advanced_Request",
+    "Title": "/auto_crawler"
   }
 }

@@ -2,7 +2,7 @@ topnav:
 - title: Topnav
   items:
     - title: GitHub
-      external_url: https://github.com/neo4dev/Crawler from scratch
+      external_url: https://github.com/neo4dev/crawler_from_scratch
 
 #Topnav dropdowns
 topnav_dropdowns:

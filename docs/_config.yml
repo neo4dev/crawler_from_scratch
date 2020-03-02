@@ -1,7 +1,7 @@
-repository: neo4dev/Crawler from scratch
+repository: neo4dev/crawler_from_scratch
 output: web
-topnav_title: Crawler from scratch
-site_title: Crawler from scratch
+topnav_title: crawler_from_scratch
+site_title: crawler_from_scratch
 company_name: neo4dev
 description: use jupyter notebook to show how crawler works
 # Set to false to disable KaTeX math
