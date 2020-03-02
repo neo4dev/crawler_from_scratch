@@ -4,7 +4,7 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
 index = {}
 
-modules = ["imports.py"]
+modules = []
 
 doc_url = "https://neo4dev.github.io/crawler_from_scratch/"
 
