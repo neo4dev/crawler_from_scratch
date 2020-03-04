@@ -12,8 +12,7 @@ index = {"find_candidate_content_list": "01_Advanced_Request.ipynb",
          "get_item_data": "01_Advanced_Request.ipynb",
          "find_item_id": "01_Advanced_Request.ipynb"}
 
-modules = ["start.py",
-           "utils.py",
+modules = ["utils.py",
            "auto.py"]
 
 doc_url = "https://neo4dev.github.io/crawler_from_scratch/"
