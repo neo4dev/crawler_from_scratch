@@ -1,0 +1,5 @@
+http://news.baidu.com
+http://www.hao123.com
+http://map.baidu.com
+http://v.baidu.com
+http://tieba.baidu.com
