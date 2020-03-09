@@ -5,4 +5,5 @@ __all__ = []
 # Cell
 # export
 import requests,json,re
-from bs4 import BeautifulSoup,Tag
+from bs4 import BeautifulSoup,Tag,NavigableString
+from collections import Counter
