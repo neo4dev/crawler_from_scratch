@@ -24,6 +24,17 @@ summary: "1. 建立请求"
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="k">import</span> <span class="n">BeautifulSoup</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
@@ -32,169 +43,11 @@ summary: "1. 建立请求"
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;http://www.baidu.com&#39;</span><span class="p">)</span>
-<span class="n">res</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;Response [200]&gt;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">res</span><span class="o">.</span><span class="n">text</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;&lt;!DOCTYPE html&gt;\r\n&lt;!--STATUS OK--&gt;&lt;html&gt; &lt;head&gt;&lt;meta http-equiv=content-type content=text/html;charset=utf-8&gt;&lt;meta http-equiv=X-UA-Compatible content=IE=Edge&gt;&lt;meta content=always name=referrer&gt;&lt;link rel=stylesheet type=text/css href=http://s1.bdstatic.com/r/www/cache/bdorz/baidu.min.css&gt;&lt;title&gt;ç\x99¾åº¦ä¸\x80ä¸\x8bï¼\x8cä½\xa0å°±ç\x9f¥é\x81\x93&lt;/title&gt;&lt;/head&gt; &lt;body link=#0000cc&gt; &lt;div id=wrapper&gt; &lt;div id=head&gt; &lt;div class=head_wrapper&gt; &lt;div class=s_form&gt; &lt;div class=s_form_wrapper&gt; &lt;div id=lg&gt; &lt;img hidefocus=true src=//www.baidu.com/img/bd_logo1.png width=270 height=129&gt; &lt;/div&gt; &lt;form id=form name=f action=//www.baidu.com/s class=fm&gt; &lt;input type=hidden name=bdorz_come value=1&gt; &lt;input type=hidden name=ie value=utf-8&gt; &lt;input type=hidden name=f value=8&gt; &lt;input type=hidden name=rsv_bp value=1&gt; &lt;input type=hidden name=rsv_idx value=1&gt; &lt;input type=hidden name=tn value=baidu&gt;&lt;span class=&#34;bg s_ipt_wr&#34;&gt;&lt;input id=kw name=wd class=s_ipt value maxlength=255 autocomplete=off autofocus&gt;&lt;/span&gt;&lt;span class=&#34;bg s_btn_wr&#34;&gt;&lt;input type=submit id=su value=ç\x99¾åº¦ä¸\x80ä¸\x8b class=&#34;bg s_btn&#34;&gt;&lt;/span&gt; &lt;/form&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=u1&gt; &lt;a href=http://news.baidu.com name=tj_trnews class=mnav&gt;æ\x96°é\x97»&lt;/a&gt; &lt;a href=http://www.hao123.com name=tj_trhao123 class=mnav&gt;hao123&lt;/a&gt; &lt;a href=http://map.baidu.com name=tj_trmap class=mnav&gt;å\x9c°å\x9b¾&lt;/a&gt; &lt;a href=http://v.baidu.com name=tj_trvideo class=mnav&gt;è§\x86é¢\x91&lt;/a&gt; &lt;a href=http://tieba.baidu.com name=tj_trtieba class=mnav&gt;è´´å\x90§&lt;/a&gt; &lt;noscript&gt; &lt;a href=http://www.baidu.com/bdorz/login.gif?login&amp;amp;tpl=mn&amp;amp;u=http%3A%2F%2Fwww.baidu.com%2f%3fbdorz_come%3d1 name=tj_login class=lb&gt;ç\x99»å½\x95&lt;/a&gt; &lt;/noscript&gt; &lt;script&gt;document.write(\&#39;&lt;a href=&#34;http://www.baidu.com/bdorz/login.gif?login&amp;tpl=mn&amp;u=\&#39;+ encodeURIComponent(window.location.href+ (window.location.search === &#34;&#34; ? &#34;?&#34; : &#34;&amp;&#34;)+ &#34;bdorz_come=1&#34;)+ \&#39;&#34; name=&#34;tj_login&#34; class=&#34;lb&#34;&gt;ç\x99»å½\x95&lt;/a&gt;\&#39;);&lt;/script&gt; &lt;a href=//www.baidu.com/more/ name=tj_briicon class=bri style=&#34;display: block;&#34;&gt;æ\x9b´å¤\x9aäº§å\x93\x81&lt;/a&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=ftCon&gt; &lt;div id=ftConw&gt; &lt;p id=lh&gt; &lt;a href=http://home.baidu.com&gt;å\x85³äº\x8eç\x99¾åº¦&lt;/a&gt; &lt;a href=http://ir.baidu.com&gt;About Baidu&lt;/a&gt; &lt;/p&gt; &lt;p id=cp&gt;&amp;copy;2017&amp;nbsp;Baidu&amp;nbsp;&lt;a href=http://www.baidu.com/duty/&gt;ä½¿ç\x94¨ç\x99¾åº¦å\x89\x8då¿\x85è¯»&lt;/a&gt;&amp;nbsp; &lt;a href=http://jianyi.baidu.com/ class=cp-feedback&gt;æ\x84\x8fè§\x81å\x8f\x8dé¦\x88&lt;/a&gt;&amp;nbsp;äº¬ICPè¯\x81030173å\x8f·&amp;nbsp; &lt;img src=//www.baidu.com/img/gs.gif&gt; &lt;/p&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;\r\n&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#35299;&#26512;">&#35299;&#26512;<a class="anchor-link" href="#&#35299;&#26512;">&#182;</a></h2>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-<span class="n">soup</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&lt;!DOCTYPE html&gt;
-&lt;!--STATUS OK--&gt;&lt;html&gt; &lt;head&gt;&lt;meta content=&#34;text/html;charset=utf-8&#34; http-equiv=&#34;content-type&#34;/&gt;&lt;meta content=&#34;IE=Edge&#34; http-equiv=&#34;X-UA-Compatible&#34;/&gt;&lt;meta content=&#34;always&#34; name=&#34;referrer&#34;/&gt;&lt;link href=&#34;http://s1.bdstatic.com/r/www/cache/bdorz/baidu.min.css&#34; rel=&#34;stylesheet&#34; type=&#34;text/css&#34;/&gt;&lt;title&gt;ç¾åº¦ä¸ä¸ï¼ä½ å°±ç¥é&lt;/title&gt;&lt;/head&gt; &lt;body link=&#34;#0000cc&#34;&gt; &lt;div id=&#34;wrapper&#34;&gt; &lt;div id=&#34;head&#34;&gt; &lt;div class=&#34;head_wrapper&#34;&gt; &lt;div class=&#34;s_form&#34;&gt; &lt;div class=&#34;s_form_wrapper&#34;&gt; &lt;div id=&#34;lg&#34;&gt; &lt;img height=&#34;129&#34; hidefocus=&#34;true&#34; src=&#34;//www.baidu.com/img/bd_logo1.png&#34; width=&#34;270&#34;/&gt; &lt;/div&gt; &lt;form action=&#34;//www.baidu.com/s&#34; class=&#34;fm&#34; id=&#34;form&#34; name=&#34;f&#34;&gt; &lt;input name=&#34;bdorz_come&#34; type=&#34;hidden&#34; value=&#34;1&#34;/&gt; &lt;input name=&#34;ie&#34; type=&#34;hidden&#34; value=&#34;utf-8&#34;/&gt; &lt;input name=&#34;f&#34; type=&#34;hidden&#34; value=&#34;8&#34;/&gt; &lt;input name=&#34;rsv_bp&#34; type=&#34;hidden&#34; value=&#34;1&#34;/&gt; &lt;input name=&#34;rsv_idx&#34; type=&#34;hidden&#34; value=&#34;1&#34;/&gt; &lt;input name=&#34;tn&#34; type=&#34;hidden&#34; value=&#34;baidu&#34;/&gt;&lt;span class=&#34;bg s_ipt_wr&#34;&gt;&lt;input autocomplete=&#34;off&#34; autofocus=&#34;&#34; class=&#34;s_ipt&#34; id=&#34;kw&#34; maxlength=&#34;255&#34; name=&#34;wd&#34; value=&#34;&#34;/&gt;&lt;/span&gt;&lt;span class=&#34;bg s_btn_wr&#34;&gt;&lt;input class=&#34;bg s_btn&#34; id=&#34;su&#34; type=&#34;submit&#34; value=&#34;ç¾åº¦ä¸ä¸&#34;/&gt;&lt;/span&gt; &lt;/form&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=&#34;u1&#34;&gt; &lt;a class=&#34;mnav&#34; href=&#34;http://news.baidu.com&#34; name=&#34;tj_trnews&#34;&gt;æ°é»&lt;/a&gt; &lt;a class=&#34;mnav&#34; href=&#34;http://www.hao123.com&#34; name=&#34;tj_trhao123&#34;&gt;hao123&lt;/a&gt; &lt;a class=&#34;mnav&#34; href=&#34;http://map.baidu.com&#34; name=&#34;tj_trmap&#34;&gt;å°å¾&lt;/a&gt; &lt;a class=&#34;mnav&#34; href=&#34;http://v.baidu.com&#34; name=&#34;tj_trvideo&#34;&gt;è§é¢&lt;/a&gt; &lt;a class=&#34;mnav&#34; href=&#34;http://tieba.baidu.com&#34; name=&#34;tj_trtieba&#34;&gt;è´´å§&lt;/a&gt; &lt;noscript&gt; &lt;a class=&#34;lb&#34; href=&#34;http://www.baidu.com/bdorz/login.gif?login&amp;amp;tpl=mn&amp;amp;u=http%3A%2F%2Fwww.baidu.com%2f%3fbdorz_come%3d1&#34; name=&#34;tj_login&#34;&gt;ç»å½&lt;/a&gt; &lt;/noscript&gt; &lt;script&gt;document.write(&#39;&lt;a href=&#34;http://www.baidu.com/bdorz/login.gif?login&amp;tpl=mn&amp;u=&#39;+ encodeURIComponent(window.location.href+ (window.location.search === &#34;&#34; ? &#34;?&#34; : &#34;&amp;&#34;)+ &#34;bdorz_come=1&#34;)+ &#39;&#34; name=&#34;tj_login&#34; class=&#34;lb&#34;&gt;ç»å½&lt;/a&gt;&#39;);&lt;/script&gt; &lt;a class=&#34;bri&#34; href=&#34;//www.baidu.com/more/&#34; name=&#34;tj_briicon&#34; style=&#34;display: block;&#34;&gt;æ´å¤äº§å&lt;/a&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=&#34;ftCon&#34;&gt; &lt;div id=&#34;ftConw&#34;&gt; &lt;p id=&#34;lh&#34;&gt; &lt;a href=&#34;http://home.baidu.com&#34;&gt;å
-³äºç¾åº¦&lt;/a&gt; &lt;a href=&#34;http://ir.baidu.com&#34;&gt;About Baidu&lt;/a&gt; &lt;/p&gt; &lt;p id=&#34;cp&#34;&gt;©2017 Baidu &lt;a href=&#34;http://www.baidu.com/duty/&#34;&gt;ä½¿ç¨ç¾åº¦åå¿
-è¯»&lt;/a&gt;  &lt;a class=&#34;cp-feedback&#34; href=&#34;http://jianyi.baidu.com/&#34;&gt;æè§åé¦&lt;/a&gt; äº¬ICPè¯030173å·  &lt;img src=&#34;//www.baidu.com/img/gs.gif&#34;/&gt; &lt;/p&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a_htmls</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="n">class_</span><span class="o">=</span><span class="s1">&#39;mnav&#39;</span><span class="p">)</span>
-<span class="n">a_htmls</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&lt;a class=&#34;mnav&#34; href=&#34;http://news.baidu.com&#34; name=&#34;tj_trnews&#34;&gt;æ°é»&lt;/a&gt;,
- &lt;a class=&#34;mnav&#34; href=&#34;http://www.hao123.com&#34; name=&#34;tj_trhao123&#34;&gt;hao123&lt;/a&gt;,
- &lt;a class=&#34;mnav&#34; href=&#34;http://map.baidu.com&#34; name=&#34;tj_trmap&#34;&gt;å°å¾&lt;/a&gt;,
- &lt;a class=&#34;mnav&#34; href=&#34;http://v.baidu.com&#34; name=&#34;tj_trvideo&#34;&gt;è§é¢&lt;/a&gt;,
- &lt;a class=&#34;mnav&#34; href=&#34;http://tieba.baidu.com&#34; name=&#34;tj_trtieba&#34;&gt;è´´å§&lt;/a&gt;]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">a_htmls</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>http://news.baidu.com
-http://www.hao123.com
-http://map.baidu.com
-http://v.baidu.com
-http://tieba.baidu.com
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -202,59 +55,11 @@ http://tieba.baidu.com
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../data/00_links.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">a_htmls</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#35835;&#21462;">&#35835;&#21462;<a class="anchor-link" href="#&#35835;&#21462;">&#182;</a></h2>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../data/00_links.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>http://news.baidu.com
-http://www.hao123.com
-http://map.baidu.com
-http://v.baidu.com
-http://tieba.baidu.com
-
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 </div>

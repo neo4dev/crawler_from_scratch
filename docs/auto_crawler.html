@@ -1,11 +1,11 @@
 ---
 
-title: Title
+title: 批量爬取网页
 
 keywords: fastai
 sidebar: home_sidebar
 
-summary: "summary"
+summary: "1. 比如批量爬豆瓣这个类别下的所有书"
 ---
 <!--
 
@@ -23,15 +23,905 @@ summary: "summary"
 <div class="cell border-box-sizing code_cell rendered">
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>improve：每天的进度能反应出来，可以git commit 标注出来，并且在这里也记录下，然后同步到git commit，然后定期git push
+强化版本和进度的概念，以形成一种使命感
+同时可以更加明确方向</p>
+<p>养成代码习惯，总结，为什么要代码习惯，就是完整，像清单一样比如定义函数</p>
+<p>notebook插件，比如目录树</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import crawler_from_scratch</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">crawler_from_scratch.utils</span> <span class="k">import</span> <span class="o">*</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">get_content_list</span><span class="p">(</span><span class="s1">&#39;https://book.douban.com/tag/</span><span class="si">%E</span><span class="s1">5%A4</span><span class="si">%96%</span><span class="s1">E5%9B%BD</span><span class="si">%E</span><span class="s1">6</span><span class="si">%96%</span><span class="s1">87</span><span class="si">%E</span><span class="s1">5%AD%A6&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&gt; <span class="ansi-green-fg">&lt;ipython-input-4-4906fe5c635a&gt;</span>(1)<span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1 </span>requests<span class="ansi-blue-fg">.</span>get<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;https://book.douban.com/tag/%E5%A4%96%E5%9B%BD%E6%96%87%E5%AD%A6&#39;</span><span class="ansi-blue-fg">)</span>
+
+ipdb&gt; 
+推测： 20 4741 ul {&#39;class&#39;: [&#39;subject-list&#39;]} li {&#39;class&#39;: [&#39;subject-item&#39;]}
+选择： 20
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&lt;li class=&#34;subject-item&#34;&gt;
+ &lt;div class=&#34;pic&#34;&gt;
+ &lt;a class=&#34;nbg&#34; href=&#34;https://book.douban.com/subject/1770782/&#34; onclick=&#34;moreurl(this,{i:&#39;0&#39;,query:&#39;&#39;,subject_id:&#39;1770782&#39;,from:&#39;book_subject_search&#39;})&#34;&gt;
+ &lt;img class=&#34;&#34; src=&#34;https://img3.doubanio.com/view/subject/s/public/s1727290.jpg&#34; width=&#34;90&#34;/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;info&#34;&gt;
+ &lt;h2 class=&#34;&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/1770782/&#34; onclick=&#34;moreurl(this,{i:&#39;0&#39;,query:&#39;&#39;,subject_id:&#39;1770782&#39;,from:&#39;book_subject_search&#39;})&#34; title=&#34;追风筝的人&#34;&gt;
+ 
+     追风筝的人
+ 
+ 
+     
+ 
+   &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;div class=&#34;pub&#34;&gt;
+         
+   
+   [美] 卡勒德·胡赛尼 / 李继宏 / 上海人民出版社 / 2006-5 / 29.00元
+ 
+       &lt;/div&gt;
+ &lt;div class=&#34;star clearfix&#34;&gt;
+ &lt;span class=&#34;allstar45&#34;&gt;&lt;/span&gt;
+ &lt;span class=&#34;rating_nums&#34;&gt;8.9&lt;/span&gt;
+ &lt;span class=&#34;pl&#34;&gt;
+         (605227人评价)
+     &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;p&gt;12岁的阿富汗富家少爷阿米尔与仆人哈桑情同手足。然而，在一场风筝比赛后，发生了一件悲惨不堪的事，阿米尔为自己的懦弱感到自责和痛苦，逼走了哈桑，不久，自己也跟... &lt;/p&gt;
+ &lt;div class=&#34;ft&#34;&gt;
+ &lt;div class=&#34;collect-info&#34;&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;cart-actions&#34;&gt;
+ &lt;span class=&#34;market-info&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/1770782/?channel=subject_list&amp;amp;platform=web&#34; target=&#34;_blank&#34;&gt;在豆瓣购买&lt;/a&gt;
+ &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;ebook-link&#34;&gt;
+ &lt;a href=&#34;https://read.douban.com/ebook/1162265/?dcs=tag-buylink&amp;amp;dcm=douban&amp;amp;dct=1770782&#34; target=&#34;_blank&#34;&gt;去看电子版&lt;/a&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;, &lt;li class=&#34;subject-item&#34;&gt;
+ &lt;div class=&#34;pic&#34;&gt;
+ &lt;a class=&#34;nbg&#34; href=&#34;https://book.douban.com/subject/1084336/&#34; onclick=&#34;moreurl(this,{i:&#39;1&#39;,query:&#39;&#39;,subject_id:&#39;1084336&#39;,from:&#39;book_subject_search&#39;})&#34;&gt;
+ &lt;img class=&#34;&#34; src=&#34;https://img3.doubanio.com/view/subject/s/public/s1103152.jpg&#34; width=&#34;90&#34;/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;info&#34;&gt;
+ &lt;h2 class=&#34;&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/1084336/&#34; onclick=&#34;moreurl(this,{i:&#39;1&#39;,query:&#39;&#39;,subject_id:&#39;1084336&#39;,from:&#39;book_subject_search&#39;})&#34; title=&#34;小王子&#34;&gt;
+ 
+     小王子
+ 
+ 
+     
+ 
+   &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;div class=&#34;pub&#34;&gt;
+         
+   
+   [法] 圣埃克苏佩里 / 马振聘 / 人民文学出版社 / 2003-8 / 22.00元
+ 
+       &lt;/div&gt;
+ &lt;div class=&#34;star clearfix&#34;&gt;
+ &lt;span class=&#34;allstar45&#34;&gt;&lt;/span&gt;
+ &lt;span class=&#34;rating_nums&#34;&gt;9.0&lt;/span&gt;
+ &lt;span class=&#34;pl&#34;&gt;
+         (525639人评价)
+     &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;p&gt;小王子是一个超凡脱俗的仙童，他住在一颗只比他大一丁点儿的小行星上。陪伴他的是一朵他非常喜爱的小玫瑰花。但玫瑰花的虚荣心伤害了小王子对她的感情。小王子告别小行... &lt;/p&gt;
+ &lt;div class=&#34;ft&#34;&gt;
+ &lt;div class=&#34;collect-info&#34;&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;cart-actions&#34;&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;, &lt;li class=&#34;subject-item&#34;&gt;
+ &lt;div class=&#34;pic&#34;&gt;
+ &lt;a class=&#34;nbg&#34; href=&#34;https://book.douban.com/subject/6082808/&#34; onclick=&#34;moreurl(this,{i:&#39;2&#39;,query:&#39;&#39;,subject_id:&#39;6082808&#39;,from:&#39;book_subject_search&#39;})&#34;&gt;
+ &lt;img class=&#34;&#34; src=&#34;https://img9.doubanio.com/view/subject/s/public/s6384944.jpg&#34; width=&#34;90&#34;/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;info&#34;&gt;
+ &lt;h2 class=&#34;&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/6082808/&#34; onclick=&#34;moreurl(this,{i:&#39;2&#39;,query:&#39;&#39;,subject_id:&#39;6082808&#39;,from:&#39;book_subject_search&#39;})&#34; title=&#34;百年孤独&#34;&gt;
+ 
+     百年孤独
+ 
+ 
+     
+ 
+   &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;div class=&#34;pub&#34;&gt;
+         
+   
+   [哥伦比亚] 加西亚·马尔克斯 / 范晔 / 南海出版公司 / 2011-6 / 39.50元
+ 
+       &lt;/div&gt;
+ &lt;div class=&#34;star clearfix&#34;&gt;
+ &lt;span class=&#34;allstar45&#34;&gt;&lt;/span&gt;
+ &lt;span class=&#34;rating_nums&#34;&gt;9.2&lt;/span&gt;
+ &lt;span class=&#34;pl&#34;&gt;
+         (264657人评价)
+     &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;p&gt;《百年孤独》是魔幻现实主义文学的代表作，描写了布恩迪亚家族七代人的传奇故事，以及加勒比海沿岸小镇马孔多的百年兴衰，反映了拉丁美洲一个世纪以来风云变幻的历史。... &lt;/p&gt;
+ &lt;div class=&#34;ft&#34;&gt;
+ &lt;div class=&#34;collect-info&#34;&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;cart-actions&#34;&gt;
+ &lt;span class=&#34;buy-info&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/6082808/buylinks&#34;&gt;
+         纸质版 31.60 元起
+       &lt;/a&gt;
+ &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;, &lt;li class=&#34;subject-item&#34;&gt;
+ &lt;div class=&#34;pic&#34;&gt;
+ &lt;a class=&#34;nbg&#34; href=&#34;https://book.douban.com/subject/10594787/&#34; onclick=&#34;moreurl(this,{i:&#39;3&#39;,query:&#39;&#39;,subject_id:&#39;10594787&#39;,from:&#39;book_subject_search&#39;})&#34;&gt;
+ &lt;img class=&#34;&#34; src=&#34;https://img3.doubanio.com/view/subject/s/public/s11284102.jpg&#34; width=&#34;90&#34;/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;info&#34;&gt;
+ &lt;h2 class=&#34;&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/10594787/&#34; onclick=&#34;moreurl(this,{i:&#39;3&#39;,query:&#39;&#39;,subject_id:&#39;10594787&#39;,from:&#39;book_subject_search&#39;})&#34; title=&#34;霍乱时期的爱情&#34;&gt;
+ 
+     霍乱时期的爱情
+ 
+ 
+     
+ 
+   &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;div class=&#34;pub&#34;&gt;
+         
+   
+   [哥伦比亚] 加西亚·马尔克斯 / 杨玲 / 南海出版公司 / 2012-9-1 / 39.50元
+ 
+       &lt;/div&gt;
+ &lt;div class=&#34;star clearfix&#34;&gt;
+ &lt;span class=&#34;allstar45&#34;&gt;&lt;/span&gt;
+ &lt;span class=&#34;rating_nums&#34;&gt;9.0&lt;/span&gt;
+ &lt;span class=&#34;pl&#34;&gt;
+         (163151人评价)
+     &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;p&gt;★马尔克斯唯一正式授权，首次完整翻译
+ ★《霍乱时期的爱情》是我最好的作品，是我发自内心的创作。——加西亚•马尔克斯
+ ★这部光芒闪耀、令人心碎的作品是人类有史... &lt;/p&gt;
+ &lt;div class=&#34;ft&#34;&gt;
+ &lt;div class=&#34;collect-info&#34;&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;cart-actions&#34;&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;, &lt;li class=&#34;subject-item&#34;&gt;
+ &lt;div class=&#34;pic&#34;&gt;
+ &lt;a class=&#34;nbg&#34; href=&#34;https://book.douban.com/subject/26954760/&#34; onclick=&#34;moreurl(this,{i:&#39;4&#39;,query:&#39;&#39;,subject_id:&#39;26954760&#39;,from:&#39;book_subject_search&#39;})&#34;&gt;
+ &lt;img class=&#34;&#34; src=&#34;https://img1.doubanio.com/view/subject/s/public/s29634528.jpg&#34; width=&#34;90&#34;/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;info&#34;&gt;
+ &lt;h2 class=&#34;&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/26954760/&#34; onclick=&#34;moreurl(this,{i:&#39;4&#39;,query:&#39;&#39;,subject_id:&#39;26954760&#39;,from:&#39;book_subject_search&#39;})&#34; title=&#34;月亮与六便士&#34;&gt;
+ 
+     月亮与六便士
+ 
+ 
+     
+ 
+   &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;div class=&#34;pub&#34;&gt;
+         
+   
+   [英] 威廉·萨默塞特·毛姆 / 徐淳刚 / 浙江文艺出版社 / 2017-1-1 / 39.80元
+ 
+       &lt;/div&gt;
+ &lt;div class=&#34;star clearfix&#34;&gt;
+ &lt;span class=&#34;allstar45&#34;&gt;&lt;/span&gt;
+ &lt;span class=&#34;rating_nums&#34;&gt;8.8&lt;/span&gt;
+ &lt;span class=&#34;pl&#34;&gt;
+         (132593人评价)
+     &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;p&gt;“满地都是六便士，他却抬头看见了月亮。”
+ 银行家查尔斯，人到中年，事业有成，为了追求内心隐秘的绘画梦想，突然抛妻别子，弃家出走。他深知：人的每一种身份都是一... &lt;/p&gt;
+ &lt;div class=&#34;ft&#34;&gt;
+ &lt;div class=&#34;collect-info&#34;&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;cart-actions&#34;&gt;
+ &lt;span class=&#34;market-info&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/26954760/?channel=subject_list&amp;amp;platform=web&#34; target=&#34;_blank&#34;&gt;在豆瓣购买&lt;/a&gt;
+ &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;ebook-link&#34;&gt;
+ &lt;a href=&#34;https://read.douban.com/ebook/34157247/?dcs=tag-buylink&amp;amp;dcm=douban&amp;amp;dct=26954760&#34; target=&#34;_blank&#34;&gt;去看电子版&lt;/a&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;, &lt;li class=&#34;subject-item&#34;&gt;
+ &lt;div class=&#34;pic&#34;&gt;
+ &lt;a class=&#34;nbg&#34; href=&#34;https://book.douban.com/subject/34808267/&#34; onclick=&#34;moreurl(this,{i:&#39;5&#39;,query:&#39;&#39;,subject_id:&#39;34808267&#39;,from:&#39;book_subject_search&#39;})&#34;&gt;
+ &lt;img class=&#34;&#34; src=&#34;https://img3.doubanio.com/view/subject/s/public/s33492042.jpg&#34; width=&#34;90&#34;/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;info&#34;&gt;
+ &lt;h2 class=&#34;&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/34808267/&#34; onclick=&#34;moreurl(this,{i:&#39;5&#39;,query:&#39;&#39;,subject_id:&#39;34808267&#39;,from:&#39;book_subject_search&#39;})&#34; title=&#34;萨拉戈萨手稿&#34;&gt;
+ 
+     萨拉戈萨手稿
+ 
+ 
+     
+ 
+   &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;div class=&#34;pub&#34;&gt;
+         
+   
+   [波兰] 扬·波托茨基 / 方颂华 / 湖南文艺出版社 / 2019-11 / 118.00元
+ 
+       &lt;/div&gt;
+ &lt;div class=&#34;star clearfix&#34;&gt;
+ &lt;span class=&#34;allstar40&#34;&gt;&lt;/span&gt;
+ &lt;span class=&#34;rating_nums&#34;&gt;8.4&lt;/span&gt;
+ &lt;span class=&#34;pl&#34;&gt;
+         (907人评价)
+     &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;p&gt;亲爱的阿方索，
+ 我们来到这里并非因为偶然……
+ 我们在等你。
+ 瓦隆卫队的年轻军官阿方索赶赴马德里加入他的军队。但他很快就发现，他被困在一家神秘的路边客栈，和形... &lt;/p&gt;
+ &lt;div class=&#34;ft&#34;&gt;
+ &lt;div class=&#34;collect-info&#34;&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;cart-actions&#34;&gt;
+ &lt;span class=&#34;market-info&#34;&gt;
+ &lt;a href=&#34;https://market.douban.com/book/Saragosse?channel=subject_list&amp;amp;platform=web&#34; target=&#34;_blank&#34;&gt;在豆瓣购买&lt;/a&gt;
+ &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;ebook-link&#34;&gt;
+ &lt;a href=&#34;https://read.douban.com/ebook/129621281/?dcs=tag-buylink&amp;amp;dcm=douban&amp;amp;dct=34808267&#34; target=&#34;_blank&#34;&gt;去看电子版&lt;/a&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;, &lt;li class=&#34;subject-item&#34;&gt;
+ &lt;div class=&#34;pic&#34;&gt;
+ &lt;a class=&#34;nbg&#34; href=&#34;https://book.douban.com/subject/4820710/&#34; onclick=&#34;moreurl(this,{i:&#39;6&#39;,query:&#39;&#39;,subject_id:&#39;4820710&#39;,from:&#39;book_subject_search&#39;})&#34;&gt;
+ &lt;img class=&#34;&#34; src=&#34;https://img1.doubanio.com/view/subject/s/public/s4371408.jpg&#34; width=&#34;90&#34;/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;info&#34;&gt;
+ &lt;h2 class=&#34;&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/4820710/&#34; onclick=&#34;moreurl(this,{i:&#39;6&#39;,query:&#39;&#39;,subject_id:&#39;4820710&#39;,from:&#39;book_subject_search&#39;})&#34; title=&#34;1984&#34;&gt;
+ 
+     1984
+ 
+ 
+     
+ 
+   &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;div class=&#34;pub&#34;&gt;
+         
+   
+   [英] 乔治·奥威尔 / 刘绍铭 / 北京十月文艺出版社 / 2010-4-1 / 28.00
+ 
+       &lt;/div&gt;
+ &lt;div class=&#34;star clearfix&#34;&gt;
+ &lt;span class=&#34;allstar45&#34;&gt;&lt;/span&gt;
+ &lt;span class=&#34;rating_nums&#34;&gt;9.3&lt;/span&gt;
+ &lt;span class=&#34;pl&#34;&gt;
+         (127296人评价)
+     &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;p&gt;★村上春树以《1Q84》向本书致敬
+ ★著名学者刘绍铭经典译本内地首次出版
+ ★62种文字风靡110个国家，全球销量超过5000万册
+ ★《时代周刊》“最好的10... &lt;/p&gt;
+ &lt;div class=&#34;ft&#34;&gt;
+ &lt;div class=&#34;collect-info&#34;&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;cart-actions&#34;&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;, &lt;li class=&#34;subject-item&#34;&gt;
+ &lt;div class=&#34;pic&#34;&gt;
+ &lt;a class=&#34;nbg&#34; href=&#34;https://book.douban.com/subject/1068920/&#34; onclick=&#34;moreurl(this,{i:&#39;7&#39;,query:&#39;&#39;,subject_id:&#39;1068920&#39;,from:&#39;book_subject_search&#39;})&#34;&gt;
+ &lt;img class=&#34;&#34; src=&#34;https://img1.doubanio.com/view/subject/s/public/s1078958.jpg&#34; width=&#34;90&#34;/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;info&#34;&gt;
+ &lt;h2 class=&#34;&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/1068920/&#34; onclick=&#34;moreurl(this,{i:&#39;7&#39;,query:&#39;&#39;,subject_id:&#39;1068920&#39;,from:&#39;book_subject_search&#39;})&#34; title=&#34;飘&#34;&gt;
+ 
+     飘
+ 
+ 
+     
+ 
+   &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;div class=&#34;pub&#34;&gt;
+         
+   
+   [美国] 玛格丽特·米切尔 / 李美华 / 译林出版社 / 2000-9 / 40.00元
+ 
+       &lt;/div&gt;
+ &lt;div class=&#34;star clearfix&#34;&gt;
+ &lt;span class=&#34;allstar45&#34;&gt;&lt;/span&gt;
+ &lt;span class=&#34;rating_nums&#34;&gt;9.3&lt;/span&gt;
+ &lt;span class=&#34;pl&#34;&gt;
+         (142829人评价)
+     &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;p&gt;小说中的故事发生在1861年美国南北战争前夕。生活在南方的少女郝思嘉从小深受南方文化传统的熏陶，可在她的血液里却流淌着野性的叛逆因素。随着战火的蔓廷和生活环... &lt;/p&gt;
+ &lt;div class=&#34;ft&#34;&gt;
+ &lt;div class=&#34;collect-info&#34;&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;cart-actions&#34;&gt;
+ &lt;span class=&#34;buy-info&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/1068920/buylinks&#34;&gt;
+         纸质版 28.00 元起
+       &lt;/a&gt;
+ &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;, &lt;li class=&#34;subject-item&#34;&gt;
+ &lt;div class=&#34;pic&#34;&gt;
+ &lt;a class=&#34;nbg&#34; href=&#34;https://book.douban.com/subject/1016003/&#34; onclick=&#34;moreurl(this,{i:&#39;8&#39;,query:&#39;&#39;,subject_id:&#39;1016003&#39;,from:&#39;book_subject_search&#39;})&#34;&gt;
+ &lt;img class=&#34;&#34; src=&#34;https://img9.doubanio.com/view/subject/s/public/s1242786.jpg&#34; width=&#34;90&#34;/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;info&#34;&gt;
+ &lt;h2 class=&#34;&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/1016003/&#34; onclick=&#34;moreurl(this,{i:&#39;8&#39;,query:&#39;&#39;,subject_id:&#39;1016003&#39;,from:&#39;book_subject_search&#39;})&#34; title=&#34;鲁滨逊漂流记&#34;&gt;
+ 
+     鲁滨逊漂流记
+ 
+ 
+     
+ 
+   &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;div class=&#34;pub&#34;&gt;
+         
+   
+   [英] 笛福 / 马静 / 广西民族出版社 / 2002-1 / 9.20元
+ 
+       &lt;/div&gt;
+ &lt;div class=&#34;star clearfix&#34;&gt;
+ &lt;span class=&#34;allstar40&#34;&gt;&lt;/span&gt;
+ &lt;span class=&#34;rating_nums&#34;&gt;8.1&lt;/span&gt;
+ &lt;span class=&#34;pl&#34;&gt;
+         (148639人评价)
+     &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;p&gt;《鲁滨逊飘流记》是18世纪英国作家达尼尔·笛福的代表作品，也是一部具有广泛的世界性影响的作品。
+ 小说以1704年一名苏格兰水手亚历山大·薛里基洛克航海遇险，... &lt;/p&gt;
+ &lt;div class=&#34;ft&#34;&gt;
+ &lt;div class=&#34;collect-info&#34;&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;cart-actions&#34;&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;, &lt;li class=&#34;subject-item&#34;&gt;
+ &lt;div class=&#34;pic&#34;&gt;
+ &lt;a class=&#34;nbg&#34; href=&#34;https://book.douban.com/subject/1083428/&#34; onclick=&#34;moreurl(this,{i:&#39;9&#39;,query:&#39;&#39;,subject_id:&#39;1083428&#39;,from:&#39;book_subject_search&#39;})&#34;&gt;
+ &lt;img class=&#34;&#34; src=&#34;https://img3.doubanio.com/view/subject/s/public/s4250062.jpg&#34; width=&#34;90&#34;/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;info&#34;&gt;
+ &lt;h2 class=&#34;&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/1083428/&#34; onclick=&#34;moreurl(this,{i:&#39;9&#39;,query:&#39;&#39;,subject_id:&#39;1083428&#39;,from:&#39;book_subject_search&#39;})&#34; title=&#34;傲慢与偏见&#34;&gt;
+ 
+     傲慢与偏见
+ 
+ 
+     
+ 
+   &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;div class=&#34;pub&#34;&gt;
+         
+   
+   [英] 奥斯丁 / 张玲、张扬 / 人民文学出版社 / 1993-7 / 13.00元
+ 
+       &lt;/div&gt;
+ &lt;div class=&#34;star clearfix&#34;&gt;
+ &lt;span class=&#34;allstar45&#34;&gt;&lt;/span&gt;
+ &lt;span class=&#34;rating_nums&#34;&gt;8.8&lt;/span&gt;
+ &lt;span class=&#34;pl&#34;&gt;
+         (173371人评价)
+     &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;p&gt;《傲慢与偏见》是简·奥斯汀的代表作，是一部描写爱情与婚姻的经典小说。作品以男女主人公达西和伊丽莎白由于傲慢和偏见而产生的爱情纠葛为线索，共写了四起姻缘：伊丽... &lt;/p&gt;
+ &lt;div class=&#34;ft&#34;&gt;
+ &lt;div class=&#34;collect-info&#34;&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;cart-actions&#34;&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;, &lt;li class=&#34;subject-item&#34;&gt;
+ &lt;div class=&#34;pic&#34;&gt;
+ &lt;a class=&#34;nbg&#34; href=&#34;https://book.douban.com/subject/4908885/&#34; onclick=&#34;moreurl(this,{i:&#39;10&#39;,query:&#39;&#39;,subject_id:&#39;4908885&#39;,from:&#39;book_subject_search&#39;})&#34;&gt;
+ &lt;img class=&#34;&#34; src=&#34;https://img9.doubanio.com/view/subject/s/public/s4468484.jpg&#34; width=&#34;90&#34;/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;info&#34;&gt;
+ &lt;h2 class=&#34;&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/4908885/&#34; onclick=&#34;moreurl(this,{i:&#39;10&#39;,query:&#39;&#39;,subject_id:&#39;4908885&#39;,from:&#39;book_subject_search&#39;})&#34; title=&#34;局外人&#34;&gt;
+ 
+     局外人
+ 
+ 
+     
+ 
+   &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;div class=&#34;pub&#34;&gt;
+         
+   
+   [法] 阿尔贝·加缪 / 柳鸣九 / 上海译文出版社 / 2010-8 / 22.00元
+ 
+       &lt;/div&gt;
+ &lt;div class=&#34;star clearfix&#34;&gt;
+ &lt;span class=&#34;allstar45&#34;&gt;&lt;/span&gt;
+ &lt;span class=&#34;rating_nums&#34;&gt;9.0&lt;/span&gt;
+ &lt;span class=&#34;pl&#34;&gt;
+         (110466人评价)
+     &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;p&gt;《局外人》是加缪小说的成名作和代表作之一，堪称20世纪整个西方文坛最具有划时代意义最著名小说之一，“局外人”也由此成为整个西方文学-哲学中最经典的人物形象和... &lt;/p&gt;
+ &lt;div class=&#34;ft&#34;&gt;
+ &lt;div class=&#34;collect-info&#34;&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;cart-actions&#34;&gt;
+ &lt;span class=&#34;market-info&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/4908885/?channel=subject_list&amp;amp;platform=web&#34; target=&#34;_blank&#34;&gt;在豆瓣购买&lt;/a&gt;
+ &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;, &lt;li class=&#34;subject-item&#34;&gt;
+ &lt;div class=&#34;pic&#34;&gt;
+ &lt;a class=&#34;nbg&#34; href=&#34;https://book.douban.com/subject/1064275/&#34; onclick=&#34;moreurl(this,{i:&#39;11&#39;,query:&#39;&#39;,subject_id:&#39;1064275&#39;,from:&#39;book_subject_search&#39;})&#34;&gt;
+ &lt;img class=&#34;&#34; src=&#34;https://img3.doubanio.com/view/subject/s/public/s1050021.jpg&#34; width=&#34;90&#34;/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;info&#34;&gt;
+ &lt;h2 class=&#34;&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/1064275/&#34; onclick=&#34;moreurl(this,{i:&#39;11&#39;,query:&#39;&#39;,subject_id:&#39;1064275&#39;,from:&#39;book_subject_search&#39;})&#34; title=&#34;老人与海&#34;&gt;
+ 
+     老人与海
+ 
+ 
+     
+ 
+   &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;div class=&#34;pub&#34;&gt;
+         
+   
+   海明威 / 吴劳 / 上海译文出版社 / 1999-10 / 8.20元
+ 
+       &lt;/div&gt;
+ &lt;div class=&#34;star clearfix&#34;&gt;
+ &lt;span class=&#34;allstar40&#34;&gt;&lt;/span&gt;
+ &lt;span class=&#34;rating_nums&#34;&gt;8.4&lt;/span&gt;
+ &lt;span class=&#34;pl&#34;&gt;
+         (145584人评价)
+     &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;p&gt;本书讲述了一个渔夫的故事。古巴老渔夫圣地亚哥在连续八十四天没捕到鱼的情况下，终于独自钓上了一条大马林鱼，但这鱼实在大，把他的小船在海上拖了三天才筋疲力尽，被... &lt;/p&gt;
+ &lt;div class=&#34;ft&#34;&gt;
+ &lt;div class=&#34;collect-info&#34;&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;cart-actions&#34;&gt;
+ &lt;span class=&#34;buy-info&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/1064275/buylinks&#34;&gt;
+         纸质版 7.30 元起
+       &lt;/a&gt;
+ &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;, &lt;li class=&#34;subject-item&#34;&gt;
+ &lt;div class=&#34;pic&#34;&gt;
+ &lt;a class=&#34;nbg&#34; href=&#34;https://book.douban.com/subject/1141406/&#34; onclick=&#34;moreurl(this,{i:&#39;12&#39;,query:&#39;&#39;,subject_id:&#39;1141406&#39;,from:&#39;book_subject_search&#39;})&#34;&gt;
+ &lt;img class=&#34;&#34; src=&#34;https://img9.doubanio.com/view/subject/s/public/s5924326.jpg&#34; width=&#34;90&#34;/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;info&#34;&gt;
+ &lt;h2 class=&#34;&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/1141406/&#34; onclick=&#34;moreurl(this,{i:&#39;12&#39;,query:&#39;&#39;,subject_id:&#39;1141406&#39;,from:&#39;book_subject_search&#39;})&#34; title=&#34;简爱（英文全本）&#34;&gt;
+ 
+     简爱（英文全本）
+ 
+ 
+     
+ 
+   &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;div class=&#34;pub&#34;&gt;
+         
+   
+   [英] 夏洛蒂·勃朗特 / 世界图书出版公司 / 2003-11 / 18.00元
+ 
+       &lt;/div&gt;
+ &lt;div class=&#34;star clearfix&#34;&gt;
+ &lt;span class=&#34;allstar45&#34;&gt;&lt;/span&gt;
+ &lt;span class=&#34;rating_nums&#34;&gt;8.5&lt;/span&gt;
+ &lt;span class=&#34;pl&#34;&gt;
+         (179130人评价)
+     &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;p&gt;《简爱》是英国女作家夏洛蒂·勃朗特的代表作品。女主人公简爱是一个追赶求平等与自主的知识女性形象，小说以其感人的对于一位“灰姑娘式”人物奋斗史的刻划取胜，《简... &lt;/p&gt;
+ &lt;div class=&#34;ft&#34;&gt;
+ &lt;div class=&#34;collect-info&#34;&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;cart-actions&#34;&gt;
+ &lt;span class=&#34;buy-info&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/1141406/buylinks&#34;&gt;
+         纸质版 15.60 元起
+       &lt;/a&gt;
+ &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;, &lt;li class=&#34;subject-item&#34;&gt;
+ &lt;div class=&#34;pic&#34;&gt;
+ &lt;a class=&#34;nbg&#34; href=&#34;https://book.douban.com/subject/6781808/&#34; onclick=&#34;moreurl(this,{i:&#39;13&#39;,query:&#39;&#39;,subject_id:&#39;6781808&#39;,from:&#39;book_subject_search&#39;})&#34;&gt;
+ &lt;img class=&#34;&#34; src=&#34;https://img3.doubanio.com/view/subject/s/public/s23128183.jpg&#34; width=&#34;90&#34;/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;info&#34;&gt;
+ &lt;h2 class=&#34;&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/6781808/&#34; onclick=&#34;moreurl(this,{i:&#39;13&#39;,query:&#39;&#39;,subject_id:&#39;6781808&#39;,from:&#39;book_subject_search&#39;})&#34; title=&#34;杀死一只知更鸟&#34;&gt;
+ 
+     杀死一只知更鸟
+ 
+ 
+     
+ 
+   &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;div class=&#34;pub&#34;&gt;
+         
+   
+   [美] 哈珀·李 / 高红梅 / 译林出版社 / 2012-9 / 32.00元
+ 
+       &lt;/div&gt;
+ &lt;div class=&#34;star clearfix&#34;&gt;
+ &lt;span class=&#34;allstar45&#34;&gt;&lt;/span&gt;
+ &lt;span class=&#34;rating_nums&#34;&gt;9.2&lt;/span&gt;
+ &lt;span class=&#34;pl&#34;&gt;
+         (62913人评价)
+     &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;p&gt;成长总是个让人烦恼的命题。成长有时会很缓慢，如小溪般唱着叮咚的歌曲趟过，有时却如此突如其来，如暴雨般劈头盖脸……三个孩子因为小镇上的几桩冤案经历了猝不及防的... &lt;/p&gt;
+ &lt;div class=&#34;ft&#34;&gt;
+ &lt;div class=&#34;collect-info&#34;&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;cart-actions&#34;&gt;
+ &lt;span class=&#34;buy-info&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/6781808/buylinks&#34;&gt;
+         纸质版 24.00 元起
+       &lt;/a&gt;
+ &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;ebook-link&#34;&gt;
+ &lt;a href=&#34;https://read.douban.com/ebook/19934382/?dcs=tag-buylink&amp;amp;dcm=douban&amp;amp;dct=6781808&#34; target=&#34;_blank&#34;&gt;去看电子版&lt;/a&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;, &lt;li class=&#34;subject-item&#34;&gt;
+ &lt;div class=&#34;pic&#34;&gt;
+ &lt;a class=&#34;nbg&#34; href=&#34;https://book.douban.com/subject/25862578/&#34; onclick=&#34;moreurl(this,{i:&#39;14&#39;,query:&#39;&#39;,subject_id:&#39;25862578&#39;,from:&#39;book_subject_search&#39;})&#34;&gt;
+ &lt;img class=&#34;&#34; src=&#34;https://img3.doubanio.com/view/subject/s/public/s27264181.jpg&#34; width=&#34;90&#34;/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;info&#34;&gt;
+ &lt;h2 class=&#34;&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/25862578/&#34; onclick=&#34;moreurl(this,{i:&#39;14&#39;,query:&#39;&#39;,subject_id:&#39;25862578&#39;,from:&#39;book_subject_search&#39;})&#34; title=&#34;解忧杂货店&#34;&gt;
+ 
+     解忧杂货店
+ 
+ 
+     
+ 
+   &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;div class=&#34;pub&#34;&gt;
+         
+   
+   [日] 东野圭吾 / 李盈春 / 南海出版公司 / 2014-5 / 39.50元
+ 
+       &lt;/div&gt;
+ &lt;div class=&#34;star clearfix&#34;&gt;
+ &lt;span class=&#34;allstar45&#34;&gt;&lt;/span&gt;
+ &lt;span class=&#34;rating_nums&#34;&gt;8.5&lt;/span&gt;
+ &lt;span class=&#34;pl&#34;&gt;
+         (604553人评价)
+     &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;p&gt;现代人内心流失的东西，这家杂货店能帮你找回——
+ 僻静的街道旁有一家杂货店，只要写下烦恼投进卷帘门的投信口，第二天就会在店后的牛奶箱里得到回答。
+ 因男友身患绝... &lt;/p&gt;
+ &lt;div class=&#34;ft&#34;&gt;
+ &lt;div class=&#34;collect-info&#34;&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;cart-actions&#34;&gt;
+ &lt;span class=&#34;market-info&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/25862578/?channel=subject_list&amp;amp;platform=web&#34; target=&#34;_blank&#34;&gt;在豆瓣购买&lt;/a&gt;
+ &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;, &lt;li class=&#34;subject-item&#34;&gt;
+ &lt;div class=&#34;pic&#34;&gt;
+ &lt;a class=&#34;nbg&#34; href=&#34;https://book.douban.com/subject/3608208/&#34; onclick=&#34;moreurl(this,{i:&#39;15&#39;,query:&#39;&#39;,subject_id:&#39;3608208&#39;,from:&#39;book_subject_search&#39;})&#34;&gt;
+ &lt;img class=&#34;&#34; src=&#34;https://img1.doubanio.com/view/subject/s/public/s3668327.jpg&#34; width=&#34;90&#34;/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;info&#34;&gt;
+ &lt;h2 class=&#34;&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/3608208/&#34; onclick=&#34;moreurl(this,{i:&#39;15&#39;,query:&#39;&#39;,subject_id:&#39;3608208&#39;,from:&#39;book_subject_search&#39;})&#34; title=&#34;牧羊少年奇幻之旅&#34;&gt;
+ 
+     牧羊少年奇幻之旅
+ 
+ 
+     
+ 
+   &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;div class=&#34;pub&#34;&gt;
+         
+   
+   [巴西] 保罗·柯艾略 / 丁文林 / 南海出版公司 / 2009-3-1 / 25.00元
+ 
+       &lt;/div&gt;
+ &lt;div class=&#34;star clearfix&#34;&gt;
+ &lt;span class=&#34;allstar45&#34;&gt;&lt;/span&gt;
+ &lt;span class=&#34;rating_nums&#34;&gt;8.6&lt;/span&gt;
+ &lt;span class=&#34;pl&#34;&gt;
+         (112245人评价)
+     &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;p&gt;牧羊少年圣地亚哥接连两次做了同一个梦，梦见埃及金字塔附近藏有一批宝藏。少年卖掉羊群，历尽千辛万苦一路向南，跨海来到非洲，穿越“死亡之海”撒哈拉大沙漠……期间... &lt;/p&gt;
+ &lt;div class=&#34;ft&#34;&gt;
+ &lt;div class=&#34;collect-info&#34;&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;cart-actions&#34;&gt;
+ &lt;span class=&#34;buy-info&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/3608208/buylinks&#34;&gt;
+         纸质版 20.00 元起
+       &lt;/a&gt;
+ &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;, &lt;li class=&#34;subject-item&#34;&gt;
+ &lt;div class=&#34;pic&#34;&gt;
+ &lt;a class=&#34;nbg&#34; href=&#34;https://book.douban.com/subject/1017143/&#34; onclick=&#34;moreurl(this,{i:&#39;16&#39;,query:&#39;&#39;,subject_id:&#39;1017143&#39;,from:&#39;book_subject_search&#39;})&#34;&gt;
+ &lt;img class=&#34;&#34; src=&#34;https://img1.doubanio.com/view/subject/s/public/s1091698.jpg&#34; width=&#34;90&#34;/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;info&#34;&gt;
+ &lt;h2 class=&#34;&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/1017143/&#34; onclick=&#34;moreurl(this,{i:&#39;16&#39;,query:&#39;&#39;,subject_id:&#39;1017143&#39;,from:&#39;book_subject_search&#39;})&#34; title=&#34;不能承受的生命之轻&#34;&gt;
+ 
+     不能承受的生命之轻
+ 
+ 
+     
+ 
+   &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;div class=&#34;pub&#34;&gt;
+         
+   
+   [捷克] 米兰·昆德拉 / 许钧 / 上海译文出版社 / 2003-7 / 23.00元
+ 
+       &lt;/div&gt;
+ &lt;div class=&#34;star clearfix&#34;&gt;
+ &lt;span class=&#34;allstar45&#34;&gt;&lt;/span&gt;
+ &lt;span class=&#34;rating_nums&#34;&gt;8.5&lt;/span&gt;
+ &lt;span class=&#34;pl&#34;&gt;
+         (197492人评价)
+     &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;p&gt;《不能承受的生命之轻》是米兰·昆德拉最负盛名的作品。小说描写了托马斯与特丽莎、萨丽娜之间的感情生活。但它不是一个男人和两个女人的三角性爱故事，它是一部哲理小... &lt;/p&gt;
+ &lt;div class=&#34;ft&#34;&gt;
+ &lt;div class=&#34;collect-info&#34;&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;cart-actions&#34;&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;, &lt;li class=&#34;subject-item&#34;&gt;
+ &lt;div class=&#34;pic&#34;&gt;
+ &lt;a class=&#34;nbg&#34; href=&#34;https://book.douban.com/subject/1013380/&#34; onclick=&#34;moreurl(this,{i:&#39;17&#39;,query:&#39;&#39;,subject_id:&#39;1013380&#39;,from:&#39;book_subject_search&#39;})&#34;&gt;
+ &lt;img class=&#34;&#34; src=&#34;https://img1.doubanio.com/view/subject/s/public/s1008927.jpg&#34; width=&#34;90&#34;/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;info&#34;&gt;
+ &lt;h2 class=&#34;&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/1013380/&#34; onclick=&#34;moreurl(this,{i:&#39;17&#39;,query:&#39;&#39;,subject_id:&#39;1013380&#39;,from:&#39;book_subject_search&#39;})&#34; title=&#34;茶花女&#34;&gt;
+ 
+     茶花女
+ 
+ 
+     
+ 
+   &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;div class=&#34;pub&#34;&gt;
+         
+   
+   小仲马 / 王振孙 / 外国文学出版社 / 1997-3 / 9.00元
+ 
+       &lt;/div&gt;
+ &lt;div class=&#34;star clearfix&#34;&gt;
+ &lt;span class=&#34;allstar40&#34;&gt;&lt;/span&gt;
+ &lt;span class=&#34;rating_nums&#34;&gt;8.2&lt;/span&gt;
+ &lt;span class=&#34;pl&#34;&gt;
+         (103631人评价)
+     &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;p&gt;《茶花女》为我们塑造了一些生动、鲜明的艺术形象，而其中最突出、最令人难忘的自然是女主人公茶花女玛格丽特。读者们切莫把玛格丽特和阿尔丰西娜·普莱西小姐混为一谈... &lt;/p&gt;
+ &lt;div class=&#34;ft&#34;&gt;
+ &lt;div class=&#34;collect-info&#34;&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;cart-actions&#34;&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;, &lt;li class=&#34;subject-item&#34;&gt;
+ &lt;div class=&#34;pic&#34;&gt;
+ &lt;a class=&#34;nbg&#34; href=&#34;https://book.douban.com/subject/34434309/&#34; onclick=&#34;moreurl(this,{i:&#39;18&#39;,query:&#39;&#39;,subject_id:&#39;34434309&#39;,from:&#39;book_subject_search&#39;})&#34;&gt;
+ &lt;img class=&#34;&#34; src=&#34;https://img1.doubanio.com/view/subject/s/public/s33463759.jpg&#34; width=&#34;90&#34;/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;info&#34;&gt;
+ &lt;h2 class=&#34;&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/34434309/&#34; onclick=&#34;moreurl(this,{i:&#39;18&#39;,query:&#39;&#39;,subject_id:&#39;34434309&#39;,from:&#39;book_subject_search&#39;})&#34; title=&#34;82年生的金智英&#34;&gt;
+ 
+     82年生的金智英
+ 
+ 
+     
+ 
+   &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;div class=&#34;pub&#34;&gt;
+         
+   
+   [韩]赵南柱 / 尹嘉玄 / 贵州人民出版社 / 2019-9 / 45.00元
+ 
+       &lt;/div&gt;
+ &lt;div class=&#34;star clearfix&#34;&gt;
+ &lt;span class=&#34;allstar40&#34;&gt;&lt;/span&gt;
+ &lt;span class=&#34;rating_nums&#34;&gt;7.9&lt;/span&gt;
+ &lt;span class=&#34;pl&#34;&gt;
+         (37065人评价)
+     &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;p&gt;一个女孩要经历多少看不见的坎坷，才能跌跌撞撞地长大成人。
+ 亚洲10年来罕见的现象级畅销书，凭口口相传在韩国销量突破100万册。
+ 韩国书店联合会评选2017年... &lt;/p&gt;
+ &lt;div class=&#34;ft&#34;&gt;
+ &lt;div class=&#34;collect-info&#34;&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;cart-actions&#34;&gt;
+ &lt;span class=&#34;market-info&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/34434309/?channel=subject_list&amp;amp;platform=web&#34; target=&#34;_blank&#34;&gt;在豆瓣购买&lt;/a&gt;
+ &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;ebook-link&#34;&gt;
+ &lt;a href=&#34;https://read.douban.com/ebook/123133635/?dcs=tag-buylink&amp;amp;dcm=douban&amp;amp;dct=34434309&#34; target=&#34;_blank&#34;&gt;去看电子版&lt;/a&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;, &lt;li class=&#34;subject-item&#34;&gt;
+ &lt;div class=&#34;pic&#34;&gt;
+ &lt;a class=&#34;nbg&#34; href=&#34;https://book.douban.com/subject/1008988/&#34; onclick=&#34;moreurl(this,{i:&#39;19&#39;,query:&#39;&#39;,subject_id:&#39;1008988&#39;,from:&#39;book_subject_search&#39;})&#34;&gt;
+ &lt;img class=&#34;&#34; src=&#34;https://img9.doubanio.com/view/subject/s/public/s1005875.jpg&#34; width=&#34;90&#34;/&gt;
+ &lt;/a&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;info&#34;&gt;
+ &lt;h2 class=&#34;&#34;&gt;
+ &lt;a href=&#34;https://book.douban.com/subject/1008988/&#34; onclick=&#34;moreurl(this,{i:&#39;19&#39;,query:&#39;&#39;,subject_id:&#39;1008988&#39;,from:&#39;book_subject_search&#39;})&#34; title=&#34;了不起的盖茨比&#34;&gt;
+ 
+     了不起的盖茨比
+ 
+ 
+     
+ 
+   &lt;/a&gt;
+ &lt;/h2&gt;
+ &lt;div class=&#34;pub&#34;&gt;
+         
+   
+   菲茨杰拉德 / 姚乃强 / 人民文学出版社 / 2004-06 / 12.00元
+ 
+       &lt;/div&gt;
+ &lt;div class=&#34;star clearfix&#34;&gt;
+ &lt;span class=&#34;allstar40&#34;&gt;&lt;/span&gt;
+ &lt;span class=&#34;rating_nums&#34;&gt;8.4&lt;/span&gt;
+ &lt;span class=&#34;pl&#34;&gt;
+         (103021人评价)
+     &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;p&gt;盖茨比为了久久地抱着的一个梦而付出了很高的代价。他死后，尼克发觉是汤姆暗中挑拨威尔逊去杀死盖茨比。他感到东部鬼影幢幢，世态炎凉，便决定回中西部老家去。这是一... &lt;/p&gt;
+ &lt;div class=&#34;ft&#34;&gt;
+ &lt;div class=&#34;collect-info&#34;&gt;
+ &lt;/div&gt;
+ &lt;div class=&#34;cart-actions&#34;&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;]</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 

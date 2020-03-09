@@ -2,15 +2,18 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"find_candidate_content_list": "01_Advanced_Request.ipynb",
-         "find_content_list": "01_Advanced_Request.ipynb",
-         "get_content_list": "01_Advanced_Request.ipynb",
+index = {"format_cookie_str": "01_Advanced_Request.ipynb",
+         "get_children": "01_Advanced_Request.ipynb",
+         "get_class": "01_Advanced_Request.ipynb",
+         "get_all_class": "01_Advanced_Request.ipynb",
+         "get_class_count": "01_Advanced_Request.ipynb",
+         "is_content_list": "01_Advanced_Request.ipynb",
+         "find_main_list": "01_Advanced_Request.ipynb",
          "is_next_page": "01_Advanced_Request.ipynb",
          "get_next_page_url": "01_Advanced_Request.ipynb",
-         "get_childrens": "01_Advanced_Request.ipynb",
-         "get_prefix": "01_Advanced_Request.ipynb",
-         "get_item_data": "01_Advanced_Request.ipynb",
-         "find_item_id": "01_Advanced_Request.ipynb"}
+         "get_child_navigablestring": "01_Advanced_Request.ipynb",
+         "get_data_name": "01_Advanced_Request.ipynb",
+         "get_data": "01_Advanced_Request.ipynb"}
 
 modules = ["utils.py",
            "auto.py"]

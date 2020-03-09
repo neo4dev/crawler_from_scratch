@@ -16,8 +16,11 @@ entries:
       title: "\u8FDB\u9636\u7684\u722C\u866B"
       url: /Advanced_Request
     - output: web,pdf
-      title: Title
+      title: "\u6279\u91CF\u722C\u53D6\u7F51\u9875"
       url: /auto_crawler
+    - output: web,pdf
+      title: "\u53D1\u5E03"
+      url: /publish
     output: web
     title: crawler_from_scratch
   output: web
