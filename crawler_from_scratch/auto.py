@@ -4,6 +4,9 @@ __all__ = []
 
 # Cell
 # export
+%reload_ext autoreload
+%autoreload 2
 import requests,json,re
 from bs4 import BeautifulSoup,Tag,NavigableString
 from collections import Counter
+from .utils import *

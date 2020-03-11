@@ -47,8 +47,8 @@ def is_content_list(soup):
         tag_similarity = max_tag_count/len(children)
 
         class_similarity = 1
-        if get_class_list(soup):
-            max_class_name,max_class_count = Counter(get_class_list(soup)).most_common(1)[0]
+        if get_all_class(soup):
+            max_class_name,max_class_count = Counter(get_all_class(soup)).most_common(1)[0]
             class_similarity = max_class_count/len(children)
 
         if max_tag_count >= 5 and tag_similarity > 0.9 and class_similarity > 0.9:
@@ -58,7 +58,7 @@ def is_content_list(soup):
 def find_main_list(soup):
     '特征：文字内容多；一条数据的样式&嵌套丰富；区别于目录，都是很短的词'
     score = 0
-    main_list = {'name':'unrecognized','attrs':{}}
+    main_list = soup
 
     items = soup.find_all(True)
     for item in items:
