@@ -13,10 +13,19 @@ index = {"format_cookie_str": "01_Advanced_Request.ipynb",
          "get_next_page_url": "01_Advanced_Request.ipynb",
          "get_child_navigablestring": "01_Advanced_Request.ipynb",
          "get_data_name": "01_Advanced_Request.ipynb",
-         "get_data": "01_Advanced_Request.ipynb"}
+         "get_data": "01_Advanced_Request.ipynb",
+         "update_ip_pool": "11_Proxy_Request.ipynb",
+         "load_ip_pool": "11_Proxy_Request.ipynb",
+         "proxy_get": "11_Proxy_Request.ipynb",
+         "init_ip_dict": "11_Proxy_Request.ipynb",
+         "update_ip_health": "11_Proxy_Request.ipynb",
+         "smart_proxy_get": "11_Proxy_Request.ipynb",
+         "validate_ip": "11_Proxy_Request.ipynb",
+         "validate_ip_dict": "11_Proxy_Request.ipynb"}
 
 modules = ["utils.py",
-           "auto.py"]
+           "None.py",
+           "proxy.py"]
 
 doc_url = "https://neo4dev.github.io/crawler_from_scratch/"
 
