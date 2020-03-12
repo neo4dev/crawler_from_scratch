@@ -4,8 +4,6 @@ __all__ = ['update_ip_pool', 'load_ip_pool', 'proxy_get', 'init_ip_dict', 'updat
            'validate_ip', 'validate_ip_dict']
 
 # Cell
-%reload_ext autoreload
-%autoreload 2
 import requests,json,re,random,sys
 from bs4 import BeautifulSoup,Tag,NavigableString
 

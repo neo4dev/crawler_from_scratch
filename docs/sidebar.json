@@ -3,7 +3,9 @@
     "Overview": "/",
     "\u6700\u7b80\u5355\u7684\u722c\u866b": "/Getting_Started",
     "\u8fdb\u9636\u7684\u722c\u866b": "/Advanced_Request",
-    "\u6279\u91cf\u722c\u53d6\u7f51\u9875": "/auto_crawler",
-    "\u53d1\u5e03": "/publish"
+    "\u6279\u91cf\u722c\u53d6\u7f51\u9875": "/Crawler_Sample",
+    "\u4ee3\u7406\u722c\u866b": "/Proxy_Request",
+    "\u4ee3\u7801\u4e60\u60ef": "/others",
+    "\u53d1\u5e03": "/release"
   }
 }

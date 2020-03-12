@@ -17,10 +17,16 @@ entries:
       url: /Advanced_Request
     - output: web,pdf
       title: "\u6279\u91CF\u722C\u53D6\u7F51\u9875"
-      url: /auto_crawler
+      url: /Crawler_Sample
+    - output: web,pdf
+      title: "\u4EE3\u7406\u722C\u866B"
+      url: /Proxy_Request
+    - output: web,pdf
+      title: "\u4EE3\u7801\u4E60\u60EF"
+      url: /others
     - output: web,pdf
       title: "\u53D1\u5E03"
-      url: /publish
+      url: /release
     output: web
     title: crawler_from_scratch
   output: web

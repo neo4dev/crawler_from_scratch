@@ -14,11 +14,11 @@
 ## 学习大纲：
 
 1. 初级-入门
-    * 最简单的爬虫，以及解析数据，存储成json  [00_Getting_Started](./00_Getting_Started.ipynb)
-    * 加cookie和headers，如何获取 [01_Advanced_Request](./01_Advanced_Request.ipynb)
-    * 批量爬页面
+    * [00_Getting_Started](./00_Getting_Started.ipynb)：最简单的爬虫，以及解析数据，存储成json  
+    * [01_Advanced_Request](./01_Advanced_Request.ipynb)：加cookie和headers，如何获取 
+    * [02_crawler_sample](./02_crawler_sample.ipynb)：批量爬页面
 * 中级-大量数据
-    * 代理
+    * [11_Proxy_Request](./11_Proxy_Request.ipynb)：代理
     * 数据库
     * 数据分析 numpy matplot
     * 探索式爬取
