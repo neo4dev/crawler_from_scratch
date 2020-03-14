@@ -45,3 +45,10 @@ import requests,json,re
 from bs4 import BeautifulSoup,Tag,NavigableString
 from collections import Counter
 from .utils import *
+
+# Cell
+import pandas as pd
+import requests,json,re
+from bs4 import BeautifulSoup,Tag,NavigableString
+from collections import Counter
+from .utils import *

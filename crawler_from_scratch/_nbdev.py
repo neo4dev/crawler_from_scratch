@@ -21,11 +21,13 @@ index = {"format_cookie_str": "01_Advanced_Request.ipynb",
          "update_ip_health": "11_Proxy_Request.ipynb",
          "smart_proxy_get": "11_Proxy_Request.ipynb",
          "validate_ip": "11_Proxy_Request.ipynb",
-         "validate_ip_dict": "11_Proxy_Request.ipynb"}
+         "validate_ip_dict": "11_Proxy_Request.ipynb",
+         "get_healthy_ip_pool": "11_Proxy_Request.ipynb"}
 
 modules = ["utils.py",
            "None.py",
-           "proxy.py"]
+           "proxy.py",
+           "db.py"]
 
 doc_url = "https://neo4dev.github.io/crawler_from_scratch/"
 
