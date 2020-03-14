@@ -22,7 +22,8 @@ index = {"format_cookie_str": "01_Advanced_Request.ipynb",
          "smart_proxy_get": "11_Proxy_Request.ipynb",
          "validate_ip": "11_Proxy_Request.ipynb",
          "validate_ip_dict": "11_Proxy_Request.ipynb",
-         "get_healthy_ip_pool": "11_Proxy_Request.ipynb"}
+         "get_healthy_ip_pool": "11_Proxy_Request.ipynb",
+         "Proxy": "11_Proxy_Request.ipynb"}
 
 modules = ["utils.py",
            "None.py",
