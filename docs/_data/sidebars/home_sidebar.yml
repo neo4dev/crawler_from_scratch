@@ -22,6 +22,9 @@ entries:
       title: "\u4EE3\u7406\u722C\u866B"
       url: /Proxy_Request
     - output: web,pdf
+      title: "\u6570\u636E\u5E93"
+      url: /Database
+    - output: web,pdf
       title: "\u4EE3\u7801\u4E60\u60EF"
       url: /others
     - output: web,pdf

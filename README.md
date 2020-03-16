@@ -2,6 +2,11 @@
 > 运用Jupyter Notebook 演示爬虫是如何运作的
 
 
+## 如何使用
+1. 下载本教程 `git clone https://github.com/neo4dev/crawler_from_scratch.git`
+* [下载并安装Anaconda](https://www.anaconda.com/distribution/#download-section) （包含了Jupyter Notebook以及运行代码所需要的常用库）
+* 命令行中启动 Jupyter Notebook `jupyter notebook`
+
 ## 学习准备
 
 1. 具备1年代码经验，熟悉python
@@ -13,22 +18,20 @@
 
 ## 学习大纲：
 
-1. 初级-入门
+1. 初级-入门（Requests + BeautifulSoup）
     * [00_Getting_Started](./00_Getting_Started.ipynb)：最简单的爬虫，以及解析数据，存储成json  
-    * [01_Advanced_Request](./01_Advanced_Request.ipynb)：加cookie和headers，如何获取 
-    * [02_crawler_sample](./02_crawler_sample.ipynb)：批量爬页面
-* 中级-大量数据
-    * [11_Proxy_Request](./11_Proxy_Request.ipynb)：代理
-    * 数据库
-    * 数据分析 numpy matplot
-    * 探索式爬取
-    * 断点续爬
+    * [01_Advanced_Request](./01_Advanced_Request.ipynb)：访问被拒？加cookie和headers，以及如何自动识别要爬取的内容 
+    * [02_Crawler_Sample](./02_Crawler_Sample.ipynb)：批量爬页面，完整实现bilibili搜索结果的爬取
+* 中级-大量数据（Proxy + Redis + Pandas）
+    * [11_Proxy_Request](./11_Proxy_Request.ipynb)：批量爬取免费代理，自动切换健康的代理
+    * [12_Database](./12_Database.ipynb)：数据库 Redis，支持高性能数据读写 
+    * 数据分析 pandas matplot
 * 高级-海量数据
-    * 分布式存储？
-    * seleium模拟登陆，获取cookie
-    * 海量数据分析 vaex 一个开源的 DataFrame 库
-    * 服务器部署
-
+    * Scrapy:探索式爬取,断点续爬
+    * MongoDB:分布式存储
+    * Vaex:海量数据分析(一个开源的 DataFrame 库)
+    * 云端爬虫：服务器部署
+    * APP爬虫：seleium模拟登陆，获取cookie
 
 
 ## 学习资料：
@@ -53,4 +56,9 @@
         * ⇧M: 合并选中单元格
 * [markdown](https://www.runoob.com/markdown/md-tutorial.html)一种轻量级标记语言，可以便捷的为这里的文字添加样式
 
+
+
+## 其他教程
+* https://github.com/wistbean/learn_python3_spider
+* https://github.com/Kr1s77/Python-crawler-tutorial-starts-from-zero
 

@@ -51,7 +51,7 @@ class Proxy():
         self.validate('http://www.baidu.com/')
         self.validate('https://www.baidu.com/')
 
-    def save():
+    def save(self):
         with open(self.path, 'w') as f:
             json.dump(self.db,f)
             print('更新成功',len(self.db.keys()))
