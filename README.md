@@ -25,7 +25,7 @@
 * 中级-大量数据（Proxy + Redis + Pandas）
     * [11_Proxy_Request](./11_Proxy_Request.ipynb)：批量爬取免费代理，自动切换健康的代理
     * [12_Database](./12_Database.ipynb)：数据库 Redis，支持高性能数据读写 
-    * 数据分析 pandas matplot
+    * [13_Data_Analysis](./13_Data_Analysis.ipynb)数据分析 pandas
 * 高级-海量数据
     * Scrapy:探索式爬取,断点续爬
     * MongoDB:分布式存储
