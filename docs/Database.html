@@ -486,39 +486,44 @@ html</p>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">parse_recipe_data</span><span class="p">(</span><span class="n">html</span><span class="p">):</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
-    
-    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">,</span><span class="s1">&#39;lxml&#39;</span><span class="p">)</span>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 
-    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;h1&#39;</span><span class="p">,</span><span class="s1">&#39;page-title&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<div class="output_wrapper">
+<div class="output">
 
-    <span class="n">author</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span><span class="s1">&#39;author&#39;</span><span class="p">)</span>
-    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;author_link&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">author</span><span class="o">.</span><span class="n">a</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span>
-    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;author_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">author</span><span class="o">.</span><span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<div class="output_area">
 
-    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;created_at&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span><span class="s1">&#39;time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">span</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-    
-    <span class="k">if</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span><span class="s1">&#39;ings&#39;</span><span class="p">):</span>
-        <span class="n">data</span><span class="p">[</span><span class="s1">&#39;ings&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span><span class="s1">&#39;ings&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">,</span><span class="s1">&#39;name&#39;</span><span class="p">)]</span>
-    
-    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span><span class="s1">&#39;number&#39;</span><span class="p">):</span>
-        <span class="k">if</span> <span class="s1">&#39;score&#39;</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;score&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="k">if</span> <span class="s1">&#39;cooked&#39;</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]:</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;cooked&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
 
-    <span class="k">return</span> <span class="n">data</span>
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="parse_recipe_data" class="doc_header"><code>parse_recipe_data</code><a href="https://github.com/neo4dev/crawler_from_scratch/tree/master/crawler_from_scratch/db.py#L19" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>parse_recipe_data</code>(<strong><code>html</code></strong>)</p>
+</blockquote>
 
-<span class="k">def</span> <span class="nf">get_recipe_data</span><span class="p">(</span><span class="n">_id</span><span class="p">):</span>
-    <span class="k">global</span> <span class="n">rdb</span>
-    <span class="n">html</span> <span class="o">=</span> <span class="n">rdb</span><span class="o">.</span><span class="n">hget</span><span class="p">(</span><span class="s1">&#39;html&#39;</span><span class="p">,</span><span class="n">_id</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">parse_recipe_data</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
-</pre></div>
+</div>
 
-    </div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+<div class="output_markdown rendered_html output_subarea ">
+<h4 id="get_recipe_data" class="doc_header"><code>get_recipe_data</code><a href="https://github.com/neo4dev/crawler_from_scratch/tree/master/crawler_from_scratch/db.py#L43" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_recipe_data</code>(<strong><code>_id</code></strong>)</p>
+</blockquote>
+
+</div>
+
+</div>
+
 </div>
 </div>
 

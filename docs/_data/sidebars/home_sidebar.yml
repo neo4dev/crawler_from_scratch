@@ -25,6 +25,9 @@ entries:
       title: "\u6570\u636E\u5E93"
       url: /Database
     - output: web,pdf
+      title: "\u6570\u636E\u5206\u6790"
+      url: /Data_Analysis
+    - output: web,pdf
       title: "\u4EE3\u7801\u4E60\u60EF"
       url: /others
     - output: web,pdf
