@@ -25,13 +25,34 @@ index = {"format_cookie_str": "01_Advanced_Request.ipynb",
          "get_healthy_ip_pool": "11_Proxy_Request.ipynb",
          "Proxy": "11_Proxy_Request.ipynb",
          "parse_recipe_data": "12_Database.ipynb",
-         "get_recipe_data": "12_Database.ipynb"}
+         "get_recipe_data": "12_Database.ipynb",
+         "connect_db": "23_IP_Pool.ipynb",
+         "make_test_data": "23_IP_Pool.ipynb",
+         "update_health": "23_IP_Pool.ipynb",
+         "match_ip": "23_IP_Pool.ipynb",
+         "match_port": "23_IP_Pool.ipynb",
+         "match_ip_with_port": "23_IP_Pool.ipynb",
+         "find_port": "23_IP_Pool.ipynb",
+         "find_ips": "23_IP_Pool.ipynb",
+         "crawl_ip": "23_IP_Pool.ipynb",
+         "proxy_website_urls": "23_IP_Pool.ipynb",
+         "https": "23_IP_Pool.ipynb",
+         "validate": "23_IP_Pool.ipynb",
+         "parallel_validate": "23_IP_Pool.ipynb",
+         "parallel_crawl_ips": "23_IP_Pool.ipynb",
+         "repeat_crawl_ips": "23_IP_Pool.ipynb",
+         "last_crawl": "23_IP_Pool.ipynb",
+         "delete_ips": "23_IP_Pool.ipynb",
+         "repeat_delete_ips": "23_IP_Pool.ipynb",
+         "last_delete": "23_IP_Pool.ipynb",
+         "get_ip": "23_IP_Pool.ipynb"}
 
 modules = ["utils.py",
            "None.py",
            "proxy.py",
            "db.py",
-           "DB.py"]
+           "DB.py",
+           "IpPool.py"]
 
 doc_url = "https://neo4dev.github.io/crawler_from_scratch/"
 
