@@ -5,12 +5,11 @@ __all__ = ['connect_db', 'update_health', 'match_ip', 'match_port', 'match_ip_wi
            'repeat_crawl_ips', 'last_crawl', 'delete_ips', 'repeat_delete_ips', 'last_delete', 'get_ip']
 
 # Cell
-import json,re,random,sys,time,os
+import re,random,time
 from concurrent.futures import ThreadPoolExecutor
 
 import requests,redis
-from bs4 import BeautifulSoup,Tag,NavigableString
-from collections import Counter
+from bs4 import BeautifulSoup
 
 
 # Cell
@@ -96,7 +95,7 @@ def crawl_ip(url):
     stock_before = len(rdb.keys())
 
     if res.status_code == 200:
-        soup = BeautifulSoup(res.text)
+        soup = BeautifulSoup(res.text,'lxml')
         for ip in find_ips(soup):
             rdb.hmset(ip,{'http_health':100,'https_health':100})
 

@@ -140,3 +140,4 @@ checklink/cookies.txt
 .gitconfig
 
 chromedriver
+data/db/
