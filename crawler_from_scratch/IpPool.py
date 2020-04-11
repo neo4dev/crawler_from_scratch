@@ -29,7 +29,8 @@ def _get_ip(protocal='http') -> str:
         health = rdb.hget(name,health_type)
 
         ips.append(name)
-        healths.append(int(health))
+        # 增加优质ip被选择的概率
+        healths.append(pow(int(health),3))
     return random.choices(ips,healths)[0]
 
 # Cell
@@ -40,10 +41,10 @@ def update_health(ip,is_health=False,protocal='http'):
     health = int(rdb.hget(ip,health_type))
     if is_health:
         rdb.hset(ip,health_type,health+1)
-        print('+ Health',protocal,ip,rdb.hget(ip,health_type))
+#         print('+ Health',protocal,ip,rdb.hget(ip,health_type))
     else:
         rdb.hset(ip,health_type,health//2)
-#     print('+' if is_health else '-','Health',protocal,ip,rdb.hget(ip,health_type))
+    print('+' if is_health else '-','Health',protocal,ip,rdb.hget(ip,health_type))
 
 # Cell
 proxy_website_urls = '''
@@ -92,15 +93,17 @@ def crawl_ip(url):
     '爬取1个页面的ip'
     rdb = connect_db()
     res = requests.get(url,headers={'user-agent':'Mozilla/5.0'})
-    stock_before = len(rdb.keys())
-
+#     stock_before = len(rdb.keys())
+    increase = 0
     if res.status_code == 200:
-        soup = BeautifulSoup(res.text,'lxml')
+        soup = BeautifulSoup(res.text,features='lxml')
         for ip in find_ips(soup):
-            rdb.hmset(ip,{'http_health':100,'https_health':100})
-
+            # 先查询，没有再更新数据库
+            if rdb.exists(ip) == 0:
+                rdb.hmset(ip,{'http_health':100,'https_health':100})
+                increase += 1
         stock = len(rdb.keys())
-        print(f'{url} 新增：{stock-stock_before}，库存更新为：{stock}个')
+        print(f'{url} 新增：{increase}，库存更新为：{stock}个')
     else:
         print(url,res,'requests请求失败')
 
@@ -123,10 +126,11 @@ def validate(ip,url='http://m.sm.cn/',timeout=5):
 
 
 # Cell
-def parallel_validate(max_workers=100):
+def parallel_validate(url,max_workers=100):
     rdb = connect_db()
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        executor.map(validate, rdb.keys())
+        executor.map(lambda ip: validate(ip,url), rdb.keys())
+#         executor.map(validate, rdb.keys())
 
 # Cell
 last_crawl = 0
