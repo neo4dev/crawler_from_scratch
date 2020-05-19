@@ -50,11 +50,6 @@ def show_current_progress(done_num,total_num,start_time):
     print(f'progress:{get_progress_bar(pct)} | cost:{cost_time}s | left:{left_time}s')
 
 # Cell
-# def _parallel_task(fn,loop_args,max_workers=3) -> iter:
-#     with ThreadPoolExecutor(max_workers=max_workers) as executor:
-#         for data in executor.map(fn,loop_args):
-#             yield data
-
 def parallel_task(fn,loop_args,max_workers=3) -> iter:
     start_time = time.time()
 
