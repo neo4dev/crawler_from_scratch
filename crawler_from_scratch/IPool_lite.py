@@ -154,7 +154,7 @@ def _proxy_request(url,ip,method='get') -> object:
                                timeout=5)
     except:
         update_health(ip)
-        print('except error:',ip,db[ip])
+#         print('except error:',ip,db[ip])
         return
     else:
         if res and res.status_code == 200: update_health(ip,is_good=True)
@@ -170,9 +170,10 @@ def proxy_request(url,method='get',repeat_times=10) -> object:
         ip = get_ip()
         res = _proxy_request(url,ip,method)
         if res and res.status_code == 200:
+            print(url,'times:',current_times,res)
             return res
         else:
-            print(url,'times:',current_times,res)
+#             print(url,'times:',current_times,res)
             current_times += 1
 
 # Cell
