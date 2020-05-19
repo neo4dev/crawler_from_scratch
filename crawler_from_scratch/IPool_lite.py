@@ -23,7 +23,8 @@ def _get_ip() -> str:
 # Cell
 def update_health(ip,is_good=False) -> int:
     '更新ip的health值，好用+1，无效/2'
-    db[ip] = db[ip]+1 if is_good else db[ip]/2
+    db[ip] = db[ip]*2 if is_good else db[ip]/2
+#     db[ip] = db[ip]+1 if is_good else db[ip]/2
     return db[ip]
 
 # Cell
