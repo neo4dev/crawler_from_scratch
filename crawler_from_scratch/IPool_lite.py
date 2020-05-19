@@ -50,27 +50,31 @@ def show_current_progress(done_num,total_num,start_time):
     print(f'progress:{get_progress_bar(pct)} | cost:{cost_time}s | left:{left_time}s')
 
 # Cell
-def _parallel_task(fn,loop_args,max_workers=3):
+def _parallel_task(fn,loop_args,max_workers=3) -> iter:
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         for data in executor.map(fn,loop_args):
             yield data
 
-def parallel_task(fn,loop_args,max_workers=3):
+def parallel_task(fn,loop_args,max_workers=3) -> iter:
     start_time = time.time()
 
     done_num = 0
     total_num = len(loop_args)
 
-    results = _parallel_task(fn,loop_args,max_workers)
-    for data in results:
-        done_num += 1
-        interval_task(lambda:show_current_progress(done_num,total_num,start_time),'progress',1)
-#         print('output data:',data)
-        yield data
+    result = []
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        for data in executor.map(fn,loop_args):
+#             yield data
+#     results = _parallel_task(fn,loop_args,max_workers)
+#     for data in results:
+            done_num += 1
+            interval_task(lambda:show_current_progress(done_num,total_num,start_time),'progress',1)
+    #         print('output data:',data)
+            result.append(data)
 
     cost_time = int(time.time()-start_time)
     print(f'{total_num} tasks, {cost_time}s')
-#     return results
+    return results
 
 # Cell
 def count_good_ips():
@@ -181,7 +185,7 @@ def proxy_request(url,method='get',repeat_times=10) -> object:
 def validate_ips(url='http://www.baidu.com/',max_workers=100):
     global db
     ips = list(db.keys())
-    parallel_task(lambda ip:_proxy_request(url, ip),ips,max_workers)
+    r = parallel_task(lambda ip:_proxy_request(url, ip),ips,max_workers)
     print('good ips:',count_good_ips())
 
 # Cell
