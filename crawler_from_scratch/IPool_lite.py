@@ -164,7 +164,7 @@ def _proxy_request(url,ip,method='get') -> object:
     else:
         if res and res.status_code == 200: update_health(ip,is_good=True)
         else: update_health(ip)
-        print(res,ip,db[ip])
+#         print(res,ip,db[ip])
         return res
 
 # Cell
