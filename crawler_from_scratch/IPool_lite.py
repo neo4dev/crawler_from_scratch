@@ -52,6 +52,8 @@ def show_current_progress(done_num,total_num,start_time):
 
 # Cell
 def parallel_task(fn,loop_args,max_workers=3) -> iter:
+    with open('parallel_task.log','w') as f:
+        f.write('')
     start_time = time.time()
 
     done_num = 0
@@ -65,18 +67,13 @@ def parallel_task(fn,loop_args,max_workers=3) -> iter:
             try:
                 data = future.result()
             except Exception as exc:
-                print('error',arg,exc)
+                print('\n\nerror',arg,exc,'\n\n')
                 with open('parallel_task.log','a') as f:
                     f.write(f'{arg}\n')
             else:
                 done_num += 1
                 interval_task(lambda:show_current_progress(done_num,total_num,start_time),'progress',1)
                 results.append(data)
-
-#         for data in executor.map(fn,loop_args):
-#             done_num += 1
-#             interval_task(lambda:show_current_progress(done_num,total_num,start_time),'progress',1)
-#             results.append(data)
 
     cost_time = int(time.time()-start_time)
     print(f'{total_num} tasks, {cost_time}s')
