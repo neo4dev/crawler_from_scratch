@@ -7,7 +7,8 @@ __all__ = ['db', 'update_health', 'interval_task', 'get_progress_bar', 'show_cur
 # Cell
 import json,random,requests,re,time
 from bs4 import BeautifulSoup
-from concurrent.futures import ThreadPoolExecutor
+import concurrent.futures
+
 from pathlib import Path
 
 # Cell
@@ -57,15 +58,25 @@ def parallel_task(fn,loop_args,max_workers=3) -> iter:
     total_num = len(loop_args)
 
     results = []
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        for data in executor.map(fn,loop_args):
-#             yield data
-#     results = _parallel_task(fn,loop_args,max_workers)
-#     for data in results:
-            done_num += 1
-            interval_task(lambda:show_current_progress(done_num,total_num,start_time),'progress',1)
-    #         print('output data:',data)
-            results.append(data)
+    with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {executor.submit(fn,arg):arg for arg in loop_args}
+        for future in concurrent.futures.as_completed(futures):
+            arg = futures[future]
+            try:
+                data = future.result()
+            except Exception as exc:
+                print('error',arg,exc)
+                with open('parallel_task.log','a') as f:
+                    f.write(f'{arg}\n')
+            else:
+                done_num += 1
+                interval_task(lambda:show_current_progress(done_num,total_num,start_time),'progress',1)
+                results.append(data)
+
+#         for data in executor.map(fn,loop_args):
+#             done_num += 1
+#             interval_task(lambda:show_current_progress(done_num,total_num,start_time),'progress',1)
+#             results.append(data)
 
     cost_time = int(time.time()-start_time)
     print(f'{total_num} tasks, {cost_time}s')
